@@ -17,10 +17,16 @@
   
   <dt>Edit Photo</dt>
   <dd>
-  <form>
+  <form action="/update_photo/<%= @the_photo.id %>" method = "post">
+    <label for="image_box">Image</label>
+    <input id="image_box" name = "query_image" value = "<%= @the_photo.image %>">
+  
+    <label for="caption_box">Caption</label>
+    <textarea id="caption_box" name = "query_caption" placeholder = "<%= @the_photo.caption %>"><%= @the_photo.caption %></textarea>
 
+    <button>Update photo</button>
+</form>
 
-  </form>
   </dd>
 
   <dt>Delete Photo</dt>
@@ -62,8 +68,15 @@
 
 <h3>Add a new comment</h3>
 
-<form>
+<form action="/insert_comment" method = "post">
+  <label for="photo_id">Photo ID</label>
+  <input id="photo_id" name = "query_photo_id" value = "<%= @the_photo.id %>">
+  
+  <label for="author_id">Author ID</label>
+  <input id = "author_id" name = "query_author" placeholder = "Enter your Author ID">
 
+  <label for="comment_id">Comment</label>
+  <textarea id="comment_id" name = "query_comment" placeholder = "Enter a comment..."></textarea>
 
-
+  <button>Add comment</button>
 </form>
