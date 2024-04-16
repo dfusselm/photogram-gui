@@ -22,7 +22,7 @@ class PhotosController < ApplicationController
   end
 
 def delete
-
+  url_id = params.fetch("path_id")
 
   render({:template => "photo_templates/delete"})
 
