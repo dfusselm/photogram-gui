@@ -21,6 +21,10 @@ class PhotosController < ApplicationController
     end
   end
 
+def delete
 
 
+  render({:template => "photo_templates/delete"})
+
+end
 end
